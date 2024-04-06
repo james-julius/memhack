@@ -9,7 +9,7 @@ from langchain_core.messages import AIMessage, AIMessageChunk
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_openai import ChatOpenAI
 from langchain_core.runnables import RunnableGenerator
-from langchain.anthropic import ChatAnthropic
+from langchain_anthropic import ChatAnthropic
 
 load_dotenv()
 
