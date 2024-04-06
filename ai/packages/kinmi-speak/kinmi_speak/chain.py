@@ -13,7 +13,7 @@ from langchain_anthropic import ChatAnthropic
 
 load_dotenv()
 
-model = ChatAnthropic('claude-3-opus-20240229')
+model = ChatAnthropic(temperature=0, model='claude-3-opus-20240229')
 prompt = ChatPromptTemplate.from_messages(
     [
         (
