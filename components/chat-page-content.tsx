@@ -4,7 +4,6 @@ import { nanoid } from 'nanoid'
 import { ChatScrollAnchor } from '@/components/chat-scroll-anchor'
 import ChatForm from '@/components/chat-form'
 import { ChatMessage } from '@/components/chat-message'
-import { useEffect } from 'react'
 
 interface ChatPageContentProps {
   avatarId: string
@@ -20,15 +19,11 @@ export default function ChatPageContent({
     body: { avatarId, userId }
   })
 
-  useEffect(() => {
-    console.log(messages)
-  }, [messages])
-
   return (
     <>
       {messages.length ? (
         <>
-          <div className="relative max-w-2xl px-4">
+          <div className="relative px-4 max-w-full overflow-y-auto">
             {messages.map((message, index) => (
               <ChatMessage key={nanoid()} message={message} />
             ))}
