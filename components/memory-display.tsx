@@ -2,15 +2,15 @@
 import { ResponsiveRadar } from '@nivo/radar'
 import { useEffect, useMemo } from 'react'
 
-type EmotionKeys = 'fear' | 'anger' | 'sadness' | 'surprise' | 'joy' | 'love'
+type EmotionKeys = 'Fear' | 'Anger' | 'Sadness' | 'Surprise' | 'Joy' | 'Love'
 
 interface EmotionSet {
-  fear: number
-  anger: number
-  sadness: number
-  surprise: number
-  joy: number
-  love: number
+  Fear: number
+  Anger: number
+  Sadness: number
+  Surprise: number
+  Joy: number
+  Love: number
 }
 
 interface Memory {
@@ -24,48 +24,48 @@ const memories: Memory[] = [
     event: 'Dudley’s Birthday at the Zoo',
     date: '1991-06-23',
     emotions: {
-      fear: 3,
-      anger: 4,
-      sadness: 5,
-      surprise: 7,
-      joy: 2,
-      love: 1
+      Fear: 3,
+      Anger: 4,
+      Sadness: 5,
+      Surprise: 7,
+      Joy: 2,
+      Love: 1
     }
   },
   {
     event: 'Meeting Rubeus Hagrid and Learning He’s a Wizard',
     date: '1991-07-31',
     emotions: {
-      fear: 4,
-      anger: 1,
-      sadness: 2,
-      surprise: 10,
-      joy: 9,
-      love: 3
+      Fear: 4,
+      Anger: 1,
+      Sadness: 2,
+      Surprise: 10,
+      Joy: 9,
+      Love: 3
     }
   },
   {
     event: 'Meeting Ron Weasley',
     date: '1991-09-01',
     emotions: {
-      fear: 2,
-      anger: 1,
-      sadness: 1,
-      surprise: 3,
-      joy: 8,
-      love: 6
+      Fear: 2,
+      Anger: 1,
+      Sadness: 1,
+      Surprise: 3,
+      Joy: 8,
+      Love: 6
     }
   },
   {
     event: 'Meeting Hermione Granger',
     date: '1991-09-01',
     emotions: {
-      fear: 1,
-      anger: 2,
-      sadness: 1,
-      surprise: 4,
-      joy: 5,
-      love: 3
+      Fear: 1,
+      Anger: 2,
+      Sadness: 1,
+      Surprise: 4,
+      Joy: 5,
+      Love: 3
     }
   },
   {
@@ -73,83 +73,83 @@ const memories: Memory[] = [
       "Winning the Triwizard Tournament and Witnessing Cedric Diggory's Death",
     date: '1995-06-24',
     emotions: {
-      fear: 10,
-      anger: 8,
-      sadness: 10,
-      surprise: 7,
-      joy: 1,
-      love: 2
+      Fear: 10,
+      Anger: 8,
+      Sadness: 10,
+      Surprise: 7,
+      Joy: 1,
+      Love: 2
     }
   },
   {
     event: 'Death of Sirius Black',
     date: '1996-06-18',
     emotions: {
-      fear: 8,
-      anger: 7,
-      sadness: 10,
-      surprise: 5,
-      joy: 0,
-      love: 6
+      Fear: 8,
+      Anger: 7,
+      Sadness: 10,
+      Surprise: 5,
+      Joy: 0,
+      Love: 6
     }
   },
   {
     event: 'Being Sorted into Gryffindor House',
     date: '1991-09-01',
     emotions: {
-      fear: 4,
-      anger: 1,
-      sadness: 2,
-      surprise: 6,
-      joy: 7,
-      love: 3
+      Fear: 4,
+      Anger: 1,
+      Sadness: 2,
+      Surprise: 6,
+      Joy: 7,
+      Love: 3
     }
   },
   {
     event: 'Winning the House Cup in His First Year',
     date: '1992-06-07',
     emotions: {
-      fear: 2,
-      anger: 1,
-      sadness: 1,
-      surprise: 5,
-      joy: 10,
-      love: 4
+      Fear: 2,
+      Anger: 1,
+      Sadness: 1,
+      Surprise: 5,
+      Joy: 10,
+      Love: 4
     }
   },
   {
     event: 'First Time Playing Quidditch',
     date: '1991-11-07',
     emotions: {
-      fear: 6,
-      anger: 2,
-      sadness: 1,
-      surprise: 7,
-      joy: 8,
-      love: 3
+      Fear: 6,
+      Anger: 2,
+      Sadness: 1,
+      Surprise: 7,
+      Joy: 8,
+      Love: 3
     }
   },
   {
     event: 'First Kiss with Ginny Weasley',
     date: '1997-05-02',
     emotions: {
-      fear: 1,
-      anger: 1,
-      sadness: 1,
-      surprise: 5,
-      joy: 9,
-      love: 10
+      Fear: 1,
+      Anger: 1,
+      Sadness: 1,
+      Surprise: 5,
+      Joy: 9,
+      Love: 10
     }
   }
 ]
 
 const emotions: EmotionKeys[] = [
-  'fear',
-  'anger',
-  'sadness',
-  'surprise',
-  'joy',
-  'love'
+  'Fear',
+  'Anger',
+  'Sadness',
+  'Surprise',
+  'Joy',
+  'Love'
 ]
 
 const MyResponsiveRadar = ({ data }: { data: EmotionSet[] }) => {
