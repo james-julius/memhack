@@ -2,7 +2,6 @@ import { auth } from '@/auth'
 import { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 import { StreamingTextResponse } from 'ai'
-import { HttpResponseOutputParser } from 'langchain/output_parsers'
 import { RunnableConfig } from '@langchain/core/runnables'
 import { RemoteRunnable } from '@langchain/core/runnables/remote'
 
@@ -54,7 +53,7 @@ export async function POST(req: NextRequest) {
           console.log(chunk)
           controller.enqueue(encoder.encode(chunk))
         }
-      } 
+      }
     })
 
     return new StreamingTextResponse(stream.pipeThrough(transformStream))
