@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
           console.log(chunk)
           controller.enqueue(encoder.encode(chunk))
         }
-      } 
+      }
     })
 
     return new StreamingTextResponse(stream.pipeThrough(transformStream))
