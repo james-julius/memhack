@@ -9,10 +9,11 @@ from langchain_core.messages import AIMessage, AIMessageChunk
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_openai import ChatOpenAI
 from langchain_core.runnables import RunnableGenerator
+from langchain.anthropic import ChatAnthropic
 
 load_dotenv()
 
-model = ChatOpenAI()
+model = ChatAnthropic('claude-3-opus-20240229')
 prompt = ChatPromptTemplate.from_messages(
     [
         (
