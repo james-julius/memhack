@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from fastapi import APIRouter, Depends, FastAPI, HTTPException, Request
 from fastapi.responses import RedirectResponse
 from kinmi_speak.chain import chain as kinmi_speak_chain
+
 from langserve import add_routes
 from starlette.status import HTTP_401_UNAUTHORIZED
 
@@ -15,12 +16,13 @@ def validate_api_key(request: Request):
     request_api_key = request.headers.get("X-API-KEY")
 
     # If no API key is set, raise an error
-    if request_api_key is None or API_KEY is None:
-        raise HTTPException(status_code=HTTP_401_UNAUTHORIZED, detail="Invalid API Key")
+    # if request_api_key is None or AP I_KEY is None:
+        # raise HTTPException(status_code=HTTP_401_UNAUTHORIZED, detail="Invalid API Key")
 
     # If the API key is invalid, raise an error
-    if not hmac.compare_digest(request_api_key, API_KEY):
-        raise HTTPException(status_code=HTTP_401_UNAUTHORIZED, detail="Invalid API Key")
+    # if not hmac.compare_digest(request_api_key, API_KEY):
+        # raise HTTPException(status_code=HTTP_401_UNAUTHORIZED, detail="Invalid API Key")
+
     return request_api_key
 
 
