@@ -113,7 +113,7 @@ const MyResponsiveRadar = ({ data }: { data: EmotionSet[] }) => {
             keys={memories.map((entry: Memory) => entry.event)}
             indexBy="emotion"
             borderColor={{ from: 'color' }}
-            gridLabelOffset={24}
+            gridLabelOffset={-10}
             dotSize={5}
             dotColor={{ theme: 'background' }}
             dotBorderWidth={2}
@@ -128,7 +128,7 @@ const MyResponsiveRadar = ({ data }: { data: EmotionSet[] }) => {
                     direction: 'column',
                     translateX: 0,
                     translateY: 0,
-                    itemWidth: 40,
+                    itemWidth: 20,
                     itemHeight: 20,
                     itemTextColor: '#444',
                     symbolSize: 12,
@@ -148,7 +148,7 @@ const MyResponsiveRadar = ({ data }: { data: EmotionSet[] }) => {
 
 export default function MemoryDisplay() {
   return (
-    <div className="w-1/3 h-full flex flex-col">
+    <div className="w-1/2 h-full flex flex-col">
       <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
         Memories
       </h4>
