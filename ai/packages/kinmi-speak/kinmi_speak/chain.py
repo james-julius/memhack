@@ -10,20 +10,25 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_openai import ChatOpenAI
 from langchain_core.runnables import RunnableGenerator
 from langchain_anthropic import ChatAnthropic
-
+from langchain import hub
 load_dotenv()
 
-model = ChatAnthropic(temperature=0, model='claude-3-opus-20240229')
-prompt = ChatPromptTemplate.from_messages(
-    [
-        (
-            "system",
-            "You're an assistant who helps people remember insights about themselves and record it into memory",
-        ),
-        MessagesPlaceholder(variable_name="history"),
-        ("human", "{input}"),
-    ]
-)
+prompt = hub.pull("kinmiai/forma")
+
+# model_choice = "claude-3-opus-20240229"
+model_choice = "claude-3-haiku-20240307"
+# model_choice = "claude-3-sonnet-20240229"
+model = ChatAnthropic(temperature=0, model=model_choice)
+# prompt = ChatPromptTemplate.from_messages(
+#     [
+#         (
+#             "system",
+#             "You're an assistant who helps people remember insights about themselves and record it into memory",
+#         ),
+#         MessagesPlaceholder(variable_name="history"),
+#         ("human", "{input}"),
+#     ]
+# )
 
 
 def stream_byte_parser(chunks: Iterable[AIMessageChunk]) -> Iterable[bytes]:

@@ -19,6 +19,7 @@ langchain-openai = "^0.1.1"
 langchain-community = "^0.0.31"
 langchain-anthropic = "^0.1.6"
 langmem = "^0.0.3"
+langchainhub = "^0.1.15"
 
 
 [tool.poetry.group.dev.dependencies]
